@@ -1,5 +1,5 @@
 import Foundation
-struct Json4Swift_Base : Codable {
+struct DataModel : Codable {
 	let pk : Int?
 	let section : String?
 	let version : String?

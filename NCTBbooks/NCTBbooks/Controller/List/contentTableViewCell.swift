@@ -2,8 +2,8 @@
 //  contentTableViewCell.swift
 //  DesignedExpandableTableViewController
 //
-//  Created by Arika Afrin Boshra on 11/2/20.
-//  Copyright © 2020 com.arika.boshra@gmail. All rights reserved.
+//  Created by Sharif Rafi on 25/2/20.
+//  Copyright © 2020 Admin. All rights reserved.
 //
 
 import UIKit

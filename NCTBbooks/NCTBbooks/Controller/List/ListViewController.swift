@@ -13,6 +13,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var listTbleView: UITableView!
     
+    
+    
     var titleArray = ["Title 1", "Title 2", "Title 3"]
     var sectionIsExpanded = [false, false, false]
     var numberOfActualSection = 4
@@ -43,7 +45,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.setCollapsed()
             }
             return cell
-        } else {
+        }
+        else {
             let cell: contentTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! contentTableViewCell
             
             cell.contentLbl.text = "Section: \(indexPath.section); row \(indexPath.row)"
