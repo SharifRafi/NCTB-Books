@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0112F7A2240B91EB0047C8DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F7A1240B91EB0047C8DB /* ViewController.swift */; };
+		0112F7A4240B92260047C8DB /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F7A3240B92250047C8DB /* ImageDownloader.swift */; };
 		018379B824071D7600022950 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018379B724071D7600022950 /* DataModel.swift */; };
-		019192D32406C27F00E5FE6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019192D22406C27F00E5FE6C /* ViewController.swift */; };
 		019192D82406C28000E5FE6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019192D72406C28000E5FE6C /* Assets.xcassets */; };
 		019192E62406C28000E5FE6C /* NCTBbooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019192E52406C28000E5FE6C /* NCTBbooksTests.swift */; };
 		019192F12406C28000E5FE6C /* NCTBbooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019192F02406C28000E5FE6C /* NCTBbooksUITests.swift */; };
@@ -44,9 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0112F7A1240B91EB0047C8DB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = NCTBbooks/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		0112F7A3240B92250047C8DB /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = NCTBbooks/Controller/ImageDownloader.swift; sourceTree = SOURCE_ROOT; };
 		018379B724071D7600022950 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		019192CB2406C27F00E5FE6C /* NCTBbooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NCTBbooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		019192D22406C27F00E5FE6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../ViewController.swift; sourceTree = "<group>"; };
 		019192D72406C28000E5FE6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019192DC2406C28000E5FE6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		019192E12406C28000E5FE6C /* NCTBbooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NCTBbooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +161,8 @@
 		019193002406C32500E5FE6C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				019192D22406C27F00E5FE6C /* ViewController.swift */,
+				0112F7A3240B92250047C8DB /* ImageDownloader.swift */,
+				0112F7A1240B91EB0047C8DB /* ViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -352,12 +355,13 @@
 			files = (
 				019193532406CA8300E5FE6C /* headerTableViewCell.swift in Sources */,
 				019193422406CA8300E5FE6C /* HomeTableViewCell.swift in Sources */,
+				0112F7A4240B92260047C8DB /* ImageDownloader.swift in Sources */,
 				018379B824071D7600022950 /* DataModel.swift in Sources */,
 				840B64E724079DE7008AEF1D /* CategoryClassName.swift in Sources */,
 				840B64E624079DE7008AEF1D /* Books.swift in Sources */,
-				019192D32406C27F00E5FE6C /* ViewController.swift in Sources */,
 				0191934A2406CA8300E5FE6C /* ListViewController.swift in Sources */,
 				019193432406CA8300E5FE6C /* HomeCollectionViewCell.swift in Sources */,
+				0112F7A2240B91EB0047C8DB /* ViewController.swift in Sources */,
 				019193542406CA8300E5FE6C /* contentTableViewCell.swift in Sources */,
 				0191934F2406CA8300E5FE6C /* AppDelegate.swift in Sources */,
 				019193442406CA8300E5FE6C /* HomeViewController.swift in Sources */,

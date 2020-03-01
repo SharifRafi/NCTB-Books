@@ -7,7 +7,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "NCTB"
+        self.title = "NCTB BOOKS"
         homeTableView.delegate = self
         homeTableView.dataSource = self
         
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
                     let json = try JSONDecoder().decode([CategoryClassName].self, from: data)
                     print("Print",json[0].books?[0] as Any)
                     for data in json {
-                        print(data)
+                        //print(data)
                         self.dataModelobject.append(data)
                     }
                   //  print(self.dataModelobject)
@@ -53,11 +53,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: HomeTableViewCell = homeTableView.dequeueReusableCell(withIdentifier: "homeTableViewCell", for: indexPath) as! HomeTableViewCell
        // print(dataModelobject[indexPath.row])
         cell.configureMethodForHomeTableViewCell( with: dataModelobject[indexPath.row])
+        cell.categoryLabel.text = dataModelobject[indexPath.row].category
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (view.frame.height / 4.0)
+        return (homeTableView.frame.height / 2.6)
     }
 }
