@@ -13,7 +13,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var listTbleView: UITableView!
     var dataModel = [CategoryClassName]()
 
-    var titleArray = [String]()
+    var listCounter:Int?
+    var listNameArray = [String]()
+    var listImageArray = [String]()
     var sectionIsExpanded = [false, false, false]
     var numberOfActualSection = 4
     
@@ -31,7 +33,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                     //print("data=data")
                     do {
                         let json = try JSONDecoder().decode([CategoryClassName].self, from: data)
-                        print("Print",json[0].books?[0] as Any)
+                        //print("Print",json[0].books?[0] as Any)
                         for data in json {
                             //print(data)
                             self.dataModel.append(data)
@@ -49,7 +51,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
   
-    
+    public func configureMethodForListTableViewCell(with json:CategoryClassName){
+        listCounter = Int(json.books?.count ?? 0)
+        for i in 0...listCounter!-1{
+            listNameArray.append(json.books![i].name ?? "")
+            listImageArray.append(json.books![i].image ?? "")
+        }
+    }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,13 +65,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sectionIsExpanded[section] ? (1+numberOfActualSection) : 1
+        return sectionIsExpanded[section] ? (1+(listCounter ?? 0)) : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell: headerTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! headerTableViewCell
             
+            configureMethodForListTableViewCell( with: dataModel[indexPath.row])
             cell.titleLbl.text = dataModel[indexPath.section].category
             
             if sectionIsExpanded[indexPath.section]{
@@ -76,22 +85,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         else {
             let cell: contentTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! contentTableViewCell
             
+            let imgUrlString = listImageArray[indexPath.row]
+            cell.bookImage.setimage(urlString: imgUrlString)
+            cell.contentLbl.text = listNameArray[indexPath.row]
+            
             //cell.contentLbl.text = "Section: \(indexPath.section); row \(indexPath.row)"
-//            let imageUrlString = HomeTableViewCell
-//            cell.bookImage.setimage(urlString: imageUrlString)
             return cell
         }
-        
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            sectionIsExpanded[indexPath.section] = !sectionIsExpanded[indexPath.section]
-            
-            tableView.reloadSections([indexPath.section], with: .automatic)
-        }
-    }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
          if indexPath.row == 0 {
@@ -102,7 +104,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             return (view.frame.height / 7)
         }
     }
-
-
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            sectionIsExpanded[indexPath.section] = !sectionIsExpanded[indexPath.section]
+            
+            tableView.reloadSections([indexPath.section], with: .automatic)
+        }
+    }
 }
-

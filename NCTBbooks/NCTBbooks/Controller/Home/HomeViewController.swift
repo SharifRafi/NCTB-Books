@@ -19,15 +19,12 @@ class HomeViewController: UIViewController {
         guard let url = URL(string: "https://api.myjson.com/bins/bh29k") else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, error == nil {
-                //print("data=data")
                 do {
                     let json = try JSONDecoder().decode([CategoryClassName].self, from: data)
-                    print("Print",json[0].books?[0] as Any)
                     for data in json {
                         //print(data)
                         self.dataModelobject.append(data)
                     }
-                  //  print(self.dataModelobject)
                     DispatchQueue.main.async {
                         self.homeTableView.reloadData()
                     }
@@ -51,7 +48,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell: HomeTableViewCell = homeTableView.dequeueReusableCell(withIdentifier: "homeTableViewCell", for: indexPath) as! HomeTableViewCell
-       // print(dataModelobject[indexPath.row])
+       
         cell.configureMethodForHomeTableViewCell( with: dataModelobject[indexPath.row])
         cell.categoryLabel.text = dataModelobject[indexPath.row].category
         
