@@ -10,6 +10,7 @@ import UIKit
 
 class contentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var contentLbl: UILabel!
     
     override func awakeFromNib() {

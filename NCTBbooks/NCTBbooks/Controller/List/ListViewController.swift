@@ -9,13 +9,11 @@
 import UIKit
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
+
     @IBOutlet weak var listTbleView: UITableView!
-    
-    
-    
-    var titleArray = ["Title 1", "Title 2", "Title 3"]
+    var dataModel = [CategoryClassName]()
+
+    var titleArray = [String]()
     var sectionIsExpanded = [false, false, false]
     var numberOfActualSection = 4
     
@@ -23,10 +21,39 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        getDataFromServer()
     }
     
+    func getDataFromServer(){
+        guard let url = URL(string: "https://api.myjson.com/bins/bh29k") else { return }
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let data = data, error == nil {
+                    //print("data=data")
+                    do {
+                        let json = try JSONDecoder().decode([CategoryClassName].self, from: data)
+                        print("Print",json[0].books?[0] as Any)
+                        for data in json {
+                            //print(data)
+                            self.dataModel.append(data)
+                        }
+                      //  print(self.dataModelobject)
+                        DispatchQueue.main.async {
+                            self.listTbleView.reloadData()
+                        }
+                    }
+                    catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }.resume()
+        }
+        
+  
+    
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return titleArray.count
+        return dataModel.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +64,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row == 0 {
             let cell: headerTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! headerTableViewCell
             
-            cell.titleLbl.text = titleArray[indexPath.section]
+            cell.titleLbl.text = dataModel[indexPath.section].category
             
             if sectionIsExpanded[indexPath.section]{
                 cell.setExpanded()
@@ -49,7 +76,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         else {
             let cell: contentTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! contentTableViewCell
             
-            cell.contentLbl.text = "Section: \(indexPath.section); row \(indexPath.row)"
+            //cell.contentLbl.text = "Section: \(indexPath.section); row \(indexPath.row)"
+//            let imageUrlString = HomeTableViewCell
+//            cell.bookImage.setimage(urlString: imageUrlString)
             return cell
         }
         
@@ -60,6 +89,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             sectionIsExpanded[indexPath.section] = !sectionIsExpanded[indexPath.section]
             
             tableView.reloadSections([indexPath.section], with: .automatic)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+         if indexPath.row == 0 {
+            return (view.frame.height / 12)
+        }
+        
+         else{
+            return (view.frame.height / 7)
         }
     }
 

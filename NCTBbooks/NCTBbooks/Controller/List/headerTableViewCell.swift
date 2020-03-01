@@ -29,7 +29,7 @@ class headerTableViewCell: UITableViewCell {
         statusBtn.setImage(down, for: .normal)
     }
     func setCollapsed(){
-        let up = UIImage(systemName: "chevron.up")
+        let up = UIImage(systemName: "chevron.right")
         statusBtn.setImage(up, for: .normal)
     }
 
