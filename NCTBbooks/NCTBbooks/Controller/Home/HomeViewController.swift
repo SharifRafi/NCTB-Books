@@ -7,7 +7,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "NCTB BOOKS"
+        //self.title = "NCTB BOOKS"
+        let img = UIImageView(image: UIImage(named: "imgpsh_fullsize_anim"))
+        img.contentMode = .scaleAspectFill
+        self.navigationController?.navigationBar.addSubview(img)
+        self.navigationController?.navigationBar.sendSubviewToBack(img)
+        
         homeTableView.delegate = self
         homeTableView.dataSource = self
         

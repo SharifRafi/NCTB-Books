@@ -69,10 +69,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        configureMethodForListTableViewCell( with: dataModel[indexPath.section])
+        
         if indexPath.row == 0 {
             let cell: headerTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! headerTableViewCell
             
-            configureMethodForListTableViewCell( with: dataModel[indexPath.row])
+            //configureMethodForListTableViewCell( with: dataModel[indexPath.row])
             cell.titleLbl.text = dataModel[indexPath.section].category
             
             if sectionIsExpanded[indexPath.section]{
@@ -80,14 +83,23 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else{
                 cell.setCollapsed()
             }
+            
+            
+            //cell.backgroundColor = UIColor.white
+            cell.layer.borderColor = UIColor.black.cgColor
+            cell.layer.borderWidth = 1
+            cell.layer.cornerRadius = 8
+            cell.clipsToBounds = true
             return cell
         }
         else {
             let cell: contentTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! contentTableViewCell
             
-            let imgUrlString = listImageArray[indexPath.row]
+            //configureMethodForListTableViewCell( with: dataModel[indexPath.row])
+            
+            let imgUrlString = listImageArray[indexPath.row-1]
             cell.bookImage.setimage(urlString: imgUrlString)
-            cell.contentLbl.text = listNameArray[indexPath.row]
+            cell.contentLbl.text = listNameArray[indexPath.row-1]
             
             //cell.contentLbl.text = "Section: \(indexPath.section); row \(indexPath.row)"
             return cell
@@ -97,7 +109,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
          if indexPath.row == 0 {
-            return (view.frame.height / 12)
+            return (view.frame.height / 15)
         }
         
          else{
@@ -111,6 +123,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             sectionIsExpanded[indexPath.section] = !sectionIsExpanded[indexPath.section]
             
             tableView.reloadSections([indexPath.section], with: .automatic)
+        }
+        
+        else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            print("check it")
+            let vc = storyboard.instantiateViewController(identifier: "ReadOrDownloadViewController")
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
