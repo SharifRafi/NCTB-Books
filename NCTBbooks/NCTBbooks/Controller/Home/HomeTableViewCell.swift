@@ -1,9 +1,18 @@
+//
+//  HomeViewController.swift
+//  NCTBbooks
+//
+//  Created by Sharif Rafi on 25/2/20.
+//  Copyright © 2020 Admin. All rights reserved.
+//
+
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var categoryLabel: UILabel!
+   var myViewController: HomeViewController!
     
     
     var counter:Int?
@@ -39,32 +48,35 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //var v:Int = indexPath.row
-        //print(indexPath.row)
         let cell: HomeCollectionViewCell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-
+        
         let imageUrlString = imageArray[indexPath.row]
         cell.homeCollectionImageView.setimage(urlString: imageUrlString)
-          
+        
         cell.homeCollectionLabel.text = nameArray[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (self.bounds.size.width / 2.8), height: (250))
-    
+        
     }
     
-//    func centerItemsInCollectionView(cellWidth: CGFloat, numberOfItems: 3.0, spaceBetweenCell: 1.0, homeCollectionView: UICollectionView) -> UIEdgeInsets {
-//        let totalWidth = cellWidth * numberOfItems
-//        let totalSpacingWidth = spaceBetweenCell * (numberOfItems - 1)
-//        let leftInset = (collectionView.frame.width - CGFloat(totalWidth + totalSpacingWidth)) / 2
-//        let rightInset = leftInset
-//        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
-//    }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        let cell: MyCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(myCellIdentifier, forIndexPath: indexPath) as! MyCollectionViewCell
+//        let nvc: UINavigationController = UIStoryboard(name: "myStoryboard", bundle: nil).instantiateViewControllerWithIdentifier("myNavigationController") as! UINavigationController
+        //cell.myViewController = nvc.childViewControllers.first as! MyViewController
+
+        //return cell
+        print("jfklsadjkl")
+//        let nvc: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ReadOrDownloadViewController")as! ReadOrDownloadViewController
+//        nvc.pushViewController(nvc, animated: true)
+        
+    }
 }
 
+//Not Needed
 extension HomeTableViewCell{
     
     func centerItemsInCollectionView(cellWidth: Double, numberOfItems: Double, spaceBetweenCell: Double, collectionView: UICollectionView) -> UIEdgeInsets {

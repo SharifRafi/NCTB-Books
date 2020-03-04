@@ -1,6 +1,6 @@
 //
 //  ListViewController.swift
-//  TabBarWithHomeListProfile
+//  NCTBbooks
 //
 //  Created by Sharif Rafi on 25/2/20.
 //  Copyright © 2020 Admin. All rights reserved.
@@ -27,7 +27,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func getDataFromServer(){
-        guard let url = URL(string: "https://api.myjson.com/bins/bh29k") else { return }
+        guard let url = URL(string: "https://api.myjson.com/bins/1a2xl2") else { return }
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let data = data, error == nil {
                     //print("data=data")
@@ -105,13 +105,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
         }
     }
+    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if indexPath.row == 0 {
+//            return 12
+//        }
+//    }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
          if indexPath.row == 0 {
             return (view.frame.height / 15)
         }
-        
          else{
             return (view.frame.height / 7)
         }
@@ -119,16 +123,23 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(sectionIsExpanded.count)
         if indexPath.row == 0 {
-            sectionIsExpanded[indexPath.section] = !sectionIsExpanded[indexPath.section]
-            
-            tableView.reloadSections([indexPath.section], with: .automatic)
+            for i in 0...sectionIsExpanded.count-1{
+                if i == indexPath.section{
+                    sectionIsExpanded[indexPath.section] = !sectionIsExpanded[indexPath.section]
+                    tableView.reloadSections([indexPath.section], with: .automatic)
+                }
+                else{
+                    sectionIsExpanded[i] = false
+                    tableView.reloadSections([i], with: .automatic)
+                }
+                tableView.reloadSections([i], with: .automatic)
+            }
         }
-        
+            
         else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            print("check it")
             let vc = storyboard.instantiateViewController(identifier: "ReadOrDownloadViewController")
             navigationController?.pushViewController(vc, animated: true)
         }
