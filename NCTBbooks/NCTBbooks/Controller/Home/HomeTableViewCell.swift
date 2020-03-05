@@ -14,6 +14,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
    var myViewController: HomeViewController!
     
+    var closure: (() -> Void)?
     
     var counter:Int?
     var nameArray = [String]()
@@ -64,14 +65,8 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        let cell: MyCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(myCellIdentifier, forIndexPath: indexPath) as! MyCollectionViewCell
-//        let nvc: UINavigationController = UIStoryboard(name: "myStoryboard", bundle: nil).instantiateViewControllerWithIdentifier("myNavigationController") as! UINavigationController
-        //cell.myViewController = nvc.childViewControllers.first as! MyViewController
-
-        //return cell
-        print("jfklsadjkl")
-//        let nvc: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ReadOrDownloadViewController")as! ReadOrDownloadViewController
-//        nvc.pushViewController(nvc, animated: true)
+        
+        closure?()
         
     }
 }

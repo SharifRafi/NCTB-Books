@@ -14,8 +14,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var dataModel = [CategoryClassName]()
 
     var listCounter:Int?
-    var listNameArray = [String]()
-    var listImageArray = [String]()
     var sectionIsExpanded = [false, false, false]
     var numberOfActualSection = 4
     
@@ -51,13 +49,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
   
-    public func configureMethodForListTableViewCell(with json:CategoryClassName){
-        listCounter = Int(json.books?.count ?? 0)
-        for i in 0...listCounter!-1{
-            listNameArray.append(json.books![i].name ?? "")
-            listImageArray.append(json.books![i].image ?? "")
-        }
-    }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,18 +56,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sectionIsExpanded[section] ? (1+(listCounter ?? 0)) : 1
+        return sectionIsExpanded[section] ? (1 + (dataModel[section].books?.count ?? 0)) : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        configureMethodForListTableViewCell( with: dataModel[indexPath.section])
         
         if indexPath.row == 0 {
             let cell: headerTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! headerTableViewCell
             
             //configureMethodForListTableViewCell( with: dataModel[indexPath.row])
             cell.titleLbl.text = dataModel[indexPath.section].category
+            //cell.configureMethodForListTableViewCell( with: dataModel[indexPath.section])
             
             if sectionIsExpanded[indexPath.section]{
                 cell.setExpanded()
@@ -95,22 +85,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         else {
             let cell: contentTableViewCell = self.listTbleView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as! contentTableViewCell
             
-            //configureMethodForListTableViewCell( with: dataModel[indexPath.row])
             
-            let imgUrlString = listImageArray[indexPath.row-1]
-            cell.bookImage.setimage(urlString: imgUrlString)
-            cell.contentLbl.text = listNameArray[indexPath.row-1]
+            cell.contentLbl.text = dataModel[indexPath.section].books![indexPath.row - 1].name ?? ""
+            print(dataModel[indexPath.section].books![indexPath.row - 1].name ?? "")
+            let imgString = dataModel[indexPath.section].books![indexPath.row - 1].image ?? ""
+            cell.bookImage.setimage(urlString: imgString)
             
-            //cell.contentLbl.text = "Section: \(indexPath.section); row \(indexPath.row)"
             return cell
         }
     }
     
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if indexPath.row == 0 {
-//            return 12
-//        }
-//    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 2.0
+    }
+    
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          if indexPath.row == 0 {
@@ -123,7 +111,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(sectionIsExpanded.count)
+        //print(sectionIsExpanded.count)
         if indexPath.row == 0 {
             for i in 0...sectionIsExpanded.count-1{
                 if i == indexPath.section{
@@ -132,7 +120,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 else{
                     sectionIsExpanded[i] = false
-                    tableView.reloadSections([i], with: .automatic)
+                    //tableView.reloadSections([i], with: .automatic)
                 }
                 tableView.reloadSections([i], with: .automatic)
             }
@@ -140,7 +128,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ReadOrDownloadViewController")
+            let vc:ReadOrDownloadViewController = storyboard.instantiateViewController(identifier: "ReadOrDownloadViewController") as! ReadOrDownloadViewController
+            //vc.groupOfBooksName.text = 
             navigationController?.pushViewController(vc, animated: true)
         }
     }

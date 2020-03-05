@@ -64,6 +64,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
        
         cell.configureMethodForHomeTableViewCell( with: dataModelobject[indexPath.row])
         cell.categoryLabel.text = dataModelobject[indexPath.row].category
+        cell.closure = {
+            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReadOrDownloadViewController") as! ReadOrDownloadViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            let imageString = cell.imageArray[indexPath.row]
+            
+            vc.bookImageString = imageString
+            
+        }
         
         return cell
     }

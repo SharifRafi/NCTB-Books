@@ -26,6 +26,10 @@
 		019193542406CA8300E5FE6C /* contentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019193522406CA8300E5FE6C /* contentTableViewCell.swift */; };
 		0195B9392407156B00E63D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195B9352407156B00E63D65 /* LaunchScreen.storyboard */; };
 		0195B93A2407156B00E63D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195B9372407156B00E63D65 /* Main.storyboard */; };
+		01AC14BF240FA5DD0070F3CB /* GroupByBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AC14BE240FA5DD0070F3CB /* GroupByBookViewController.swift */; };
+		01AC14C4240FA85A0070F3CB /* ListOfBooksNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AC14C3240FA85A0070F3CB /* ListOfBooksNameTableViewCell.swift */; };
+		01AC14C6240FA8890070F3CB /* ListOfBooksByClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AC14C5240FA8890070F3CB /* ListOfBooksByClassTableViewCell.swift */; };
+		01AC14C8240FA8CD0070F3CB /* ListOfBookByClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AC14C7240FA8CD0070F3CB /* ListOfBookByClassViewController.swift */; };
 		840B64E624079DE7008AEF1D /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B64E424079DE7008AEF1D /* Books.swift */; };
 		840B64E724079DE7008AEF1D /* CategoryClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B64E524079DE7008AEF1D /* CategoryClassName.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +77,10 @@
 		019193522406CA8300E5FE6C /* contentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = contentTableViewCell.swift; path = NCTBbooks/Controller/List/contentTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		0195B9362407156B00E63D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0195B9382407156B00E63D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01AC14BE240FA5DD0070F3CB /* GroupByBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupByBookViewController.swift; sourceTree = "<group>"; };
+		01AC14C3240FA85A0070F3CB /* ListOfBooksNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfBooksNameTableViewCell.swift; sourceTree = "<group>"; };
+		01AC14C5240FA8890070F3CB /* ListOfBooksByClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfBooksByClassTableViewCell.swift; sourceTree = "<group>"; };
+		01AC14C7240FA8CD0070F3CB /* ListOfBookByClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfBookByClassViewController.swift; sourceTree = "<group>"; };
 		840B64E424079DE7008AEF1D /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		840B64E524079DE7008AEF1D /* CategoryClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryClassName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,8 +142,8 @@
 		019192CD2406C27F00E5FE6C /* NCTBbooks */ = {
 			isa = PBXGroup;
 			children = (
-				0195B92124070E8F00E63D65 /* Models */,
 				0195B9342407156B00E63D65 /* View */,
+				0195B92124070E8F00E63D65 /* Models */,
 				019192FF2406C31A00E5FE6C /* Controllers */,
 				0191934C2406CA8300E5FE6C /* SupporteFiles */,
 				019192D72406C28000E5FE6C /* Assets.xcassets */,
@@ -167,6 +175,7 @@
 			children = (
 				019193002406C32500E5FE6C /* Main */,
 				0191931C2406C64C00E5FE6C /* Home */,
+				01AC14BD240FA57C0070F3CB /* GrpupByBook */,
 				019193182406C5B600E5FE6C /* List */,
 				019193032406C36300E5FE6C /* BooksInfo */,
 			);
@@ -237,6 +246,25 @@
 				0195B9372407156B00E63D65 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		01AC14BD240FA57C0070F3CB /* GrpupByBook */ = {
+			isa = PBXGroup;
+			children = (
+				01AC14BE240FA5DD0070F3CB /* GroupByBookViewController.swift */,
+				01AC14C3240FA85A0070F3CB /* ListOfBooksNameTableViewCell.swift */,
+				01AC14C2240FA6410070F3CB /* BooksOfAllClasses */,
+			);
+			path = GrpupByBook;
+			sourceTree = "<group>";
+		};
+		01AC14C2240FA6410070F3CB /* BooksOfAllClasses */ = {
+			isa = PBXGroup;
+			children = (
+				01AC14C7240FA8CD0070F3CB /* ListOfBookByClassViewController.swift */,
+				01AC14C5240FA8890070F3CB /* ListOfBooksByClassTableViewCell.swift */,
+			);
+			path = BooksOfAllClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				019193532406CA8300E5FE6C /* headerTableViewCell.swift in Sources */,
+				01AC14C8240FA8CD0070F3CB /* ListOfBookByClassViewController.swift in Sources */,
 				019193422406CA8300E5FE6C /* HomeTableViewCell.swift in Sources */,
 				0112F7A4240B92260047C8DB /* ImageDownloader.swift in Sources */,
 				018379B824071D7600022950 /* DataModel.swift in Sources */,
@@ -380,9 +409,12 @@
 				0191934A2406CA8300E5FE6C /* ListViewController.swift in Sources */,
 				019193432406CA8300E5FE6C /* HomeCollectionViewCell.swift in Sources */,
 				0112F7A2240B91EB0047C8DB /* ViewController.swift in Sources */,
+				01AC14C6240FA8890070F3CB /* ListOfBooksByClassTableViewCell.swift in Sources */,
+				01AC14C4240FA85A0070F3CB /* ListOfBooksNameTableViewCell.swift in Sources */,
 				019193542406CA8300E5FE6C /* contentTableViewCell.swift in Sources */,
 				013BA479240E379D00767702 /* ReadOrDownloadViewController.swift in Sources */,
 				013BA478240E379D00767702 /* PdfReaderViewController.swift in Sources */,
+				01AC14BF240FA5DD0070F3CB /* GroupByBookViewController.swift in Sources */,
 				0191934F2406CA8300E5FE6C /* AppDelegate.swift in Sources */,
 				019193442406CA8300E5FE6C /* HomeViewController.swift in Sources */,
 				019193502406CA8300E5FE6C /* SceneDelegate.swift in Sources */,
