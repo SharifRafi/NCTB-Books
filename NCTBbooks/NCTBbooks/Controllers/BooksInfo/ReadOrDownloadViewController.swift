@@ -13,7 +13,10 @@ class ReadOrDownloadViewController: UIViewController {
     @IBOutlet weak var groupOfBooksName: UILabel!
     @IBOutlet weak var className: UILabel!
     @IBOutlet weak var selectedBooksImage: UIImageView!
-
+    @IBOutlet weak var readButtonOutlet: UIButton!
+    @IBOutlet weak var downloadButtonOutlet: UIButton!
+    
+    
     var bookImageString: String = String()
 
     override func viewDidLoad() {
@@ -24,16 +27,23 @@ class ReadOrDownloadViewController: UIViewController {
         self.navigationController?.navigationBar.addSubview(img)
         self.navigationController?.navigationBar.sendSubviewToBack(img)
         
-        gettingBookImage()
+        
+        readButtonOutlet.layer.cornerRadius = 10
+        readButtonOutlet.layer.borderWidth = 1
+        readButtonOutlet.layer.borderColor = UIColor.green.cgColor
+        
+        downloadButtonOutlet.layer.cornerRadius = 10
+        
+        //gettingBookImage()
     }
     
-    func gettingBookImage() {
-        let imageURL = URL(string: bookImageString)
-        UIImage.getImage(url: imageURL!) { (bookImage) in
-        self.selectedBooksImage.image = bookImage
-        }
-    }
-    
+//    func gettingBookImage() {
+//        let imageURL = URL(string: bookImageString)
+//        UIImage.getImage(url: imageURL!) { (bookImage) in
+//        self.selectedBooksImage.image = bookImage
+//        }
+//    }
+//
     @IBAction func readButton(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

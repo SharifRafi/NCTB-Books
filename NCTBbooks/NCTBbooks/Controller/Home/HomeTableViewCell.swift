@@ -31,14 +31,14 @@ class HomeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    public func configureMethodForHomeTableViewCell(with json:CategoryClassName){
-        counter = Int(json.books?.count ?? 0)
-        //print("counter section", json.books?.count)
-        for i in 0...counter!-1{
-
-            nameArray.append(json.books![i].name ?? "")
-            imageArray.append(json.books![i].image ?? "")
-        }
+    public func configureMethodForHomeTableViewCell(with json:ResponseForHome){
+//        counter = Int(json.books?.count ?? 0)
+//        //print("counter section", json.books?.count)
+//        for i in 0...counter!-1{
+//
+//            nameArray.append(json.books![i].name ?? "")
+//            imageArray.append(json.books![i].imageURL ?? "")
+//        }
     }
 }
 
@@ -64,10 +64,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
         closure?()
-        
     }
 }
 

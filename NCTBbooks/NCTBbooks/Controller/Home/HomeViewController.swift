@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
-    var dataModelobject = [CategoryClassName]()
+    var dataModelobject = [ResponseForHome]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,12 @@ class HomeViewController: UIViewController {
     
     func gettingDataFromServer() {
         
-        guard let url = URL(string: "https://api.myjson.com/bins/bh29k") else { return }
+        guard let url = URL(string: "http://103.192.157.61:84/api/Book/GetAllBookListGroupByCategory") else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data, error == nil {
                 do {
-                    let json = try JSONDecoder().decode([CategoryClassName].self, from: data)
+                    let json = try JSONDecoder().decode([ResponseForHome].self, from: data)
+                    print(json)
                     for data in json {
                         //print(data)
                         self.dataModelobject.append(data)
@@ -62,17 +63,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         let cell: HomeTableViewCell = homeTableView.dequeueReusableCell(withIdentifier: "homeTableViewCell", for: indexPath) as! HomeTableViewCell
        
-        cell.configureMethodForHomeTableViewCell( with: dataModelobject[indexPath.row])
-        cell.categoryLabel.text = dataModelobject[indexPath.row].category
+//        cell.configureMethodForHomeTableViewCell( with: dataModelobject[indexPath.row])
+//        cell.categoryLabel.text = dataModelobject[indexPath.row].category
+        //cell.closure(Int){
+            
+        //}
+        
         cell.closure = {
             //let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReadOrDownloadViewController") as! ReadOrDownloadViewController
             self.navigationController?.pushViewController(vc, animated: true)
-            
+
             let imageString = cell.imageArray[indexPath.row]
-            
+
             vc.bookImageString = imageString
-            
+
         }
         
         return cell
