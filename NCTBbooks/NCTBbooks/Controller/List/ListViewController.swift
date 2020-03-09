@@ -9,13 +9,14 @@
 import UIKit
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet weak var listTbleView: UITableView!
     var dataModel = [CategoryClassName]()
-    
+
     var listCounter:Int?
     var sectionIsExpanded = [false, false, false]
     var numberOfActualSection = 4
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,27 +26,30 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func getDataFromServer(){
         guard let url = URL(string: "https://api.myjson.com/bins/1a2xl2") else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let data = data, error == nil {
-                //print("data=data")
-                do {
-                    let json = try JSONDecoder().decode([CategoryClassName].self, from: data)
-                    //print("Print",json[0].books?[0] as Any)
-                    for data in json {
-                        //print(data)
-                        self.dataModel.append(data)
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let data = data, error == nil {
+                    //print("data=data")
+                    do {
+                        let json = try JSONDecoder().decode([CategoryClassName].self, from: data)
+                        //print("Print",json[0].books?[0] as Any)
+                        for data in json {
+                            //print(data)
+                            self.dataModel.append(data)
+                        }
+                      //  print(self.dataModelobject)
+                        DispatchQueue.main.async {
+                            self.listTbleView.reloadData()
+                        }
                     }
-                    //  print(self.dataModelobject)
-                    DispatchQueue.main.async {
-                        self.listTbleView.reloadData()
+                    catch {
+                        print(error.localizedDescription)
                     }
                 }
-                catch {
-                    print(error.localizedDescription)
-                }
-            }
-        }.resume()
-    }
+            }.resume()
+        }
+        
+  
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return dataModel.count
@@ -71,12 +75,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             
-            cell.backgroundColor = UIColor.white
-            cell.layer.borderColor = UIColor.white.cgColor
+            //cell.backgroundColor = UIColor.white
+            cell.layer.borderColor = UIColor.black.cgColor
             cell.layer.borderWidth = 1
-            cell.layer.cornerRadius = 10
+            cell.layer.cornerRadius = 8
             cell.clipsToBounds = true
-            
             return cell
         }
         else {
@@ -93,15 +96,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 8
+        return 2.0
     }
     
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+         if indexPath.row == 0 {
             return (view.frame.height / 15)
         }
-        else{
+         else{
             return (view.frame.height / 7)
         }
     }
