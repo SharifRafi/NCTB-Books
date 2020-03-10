@@ -1,7 +1,5 @@
-//
 //  HomeViewController.swift
 //  NCTBbooks
-//
 //  Created by Sharif Rafi on 25/2/20.
 //  Copyright © 2020 Admin. All rights reserved.
 //
@@ -12,7 +10,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var categoryLabel: UILabel!
-   var myViewController: HomeViewController!
+    var myViewController: HomeViewController!
     
     var closure: (() -> Void)?
     
@@ -22,7 +20,6 @@ class HomeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
     }
@@ -31,14 +28,15 @@ class HomeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    public func configureMethodForHomeTableViewCell(with json:ResponseForHome){
-//        counter = Int(json.books?.count ?? 0)
-//        //print("counter section", json.books?.count)
-//        for i in 0...counter!-1{
-//
-//            nameArray.append(json.books![i].name ?? "")
-//            imageArray.append(json.books![i].imageURL ?? "")
-//        }
+    public func configureMethodForHomeTableViewCell(with json:BookCategory){
+        counter = Int(json.books?.count ?? 0)
+        //print("counter section", json.books?.count)
+        for i in 0...counter! - 1{
+
+            nameArray.append(json.books![i].name ?? "")
+            imageArray.append(json.books![i].imageURL ?? "")
+           //print(imageArray[i])
+        }
     }
 }
 
@@ -51,8 +49,13 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeCollectionViewCell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
         
-        let imageUrlString = imageArray[indexPath.row]
-        cell.homeCollectionImageView.setimage(urlString: imageUrlString)
+        let imageString = imageArray[indexPath.row]
+        let imageUrlString = URL(string: imageString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+        
+        UIImage.getImage(url: imageUrlString, completion: { (image) in
+            
+            cell.homeCollectionImageView.image = image
+        })
         
         cell.homeCollectionLabel.text = nameArray[indexPath.row]
         return cell
@@ -81,21 +84,20 @@ extension HomeTableViewCell{
 }
 
 
-extension UIImageView {
+extension UIImage {
     
-    public func setimage(urlString: String) {
-        guard let url = URL(string: urlString) else {
-            return
-        }
+    static func downloadImage(url: URL, completion: @escaping(_ image: UIImage?) -> ()) {
         
-        let theTask = URLSession.shared.dataTask(with: url) {
-            data, response, error in
-            if let response = data {
-                DispatchQueue.main.async {
-                    self.image = UIImage(data: response)
-                }
+        URLSession.shared.dataTask(with: url) { data, responseUrl, error in
+            var downloadedImage: UIImage?
+            
+            if let data = data {
+                downloadedImage = UIImage(data: data)
             }
-        }
-        theTask.resume()
+            
+            DispatchQueue.main.async {
+                completion(downloadedImage)
+            }
+        }.resume()
     }
 }

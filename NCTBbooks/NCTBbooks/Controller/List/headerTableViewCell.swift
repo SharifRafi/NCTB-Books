@@ -12,7 +12,7 @@ var listCounter:Int = 0
 var listNameArray = [String]()
 var listImageArray = [String]()
 
-class headerTableViewCell: UITableViewCell {
+class HeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var statusBtn: UIButton!
