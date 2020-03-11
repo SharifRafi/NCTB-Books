@@ -30,6 +30,7 @@
 		019193502406CA8300E5FE6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191934E2406CA8300E5FE6C /* SceneDelegate.swift */; };
 		019193532406CA8300E5FE6C /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019193512406CA8300E5FE6C /* HeaderTableViewCell.swift */; };
 		019193542406CA8300E5FE6C /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019193522406CA8300E5FE6C /* ContentTableViewCell.swift */; };
+		019328272418B172006BFDE3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019328262418B172006BFDE3 /* TabBarController.swift */; };
 		0195B9392407156B00E63D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195B9352407156B00E63D65 /* LaunchScreen.storyboard */; };
 		0195B93A2407156B00E63D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195B9372407156B00E63D65 /* Main.storyboard */; };
 		840B64E624079DE7008AEF1D /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B64E424079DE7008AEF1D /* Books.swift */; };
@@ -83,6 +84,7 @@
 		0191934E2406CA8300E5FE6C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		019193512406CA8300E5FE6C /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderTableViewCell.swift; path = NCTBbooks/Controller/List/HeaderTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		019193522406CA8300E5FE6C /* ContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentTableViewCell.swift; path = NCTBbooks/Controller/List/ContentTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		019328262418B172006BFDE3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0195B9362407156B00E63D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0195B9382407156B00E63D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		840B64E424079DE7008AEF1D /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				0112F7A3240B92250047C8DB /* ImageDownloader.swift */,
 				0112F7A1240B91EB0047C8DB /* ViewController.swift */,
+				019328262418B172006BFDE3 /* TabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				019193432406CA8300E5FE6C /* HomeCollectionViewCell.swift in Sources */,
 				0112F7A2240B91EB0047C8DB /* ViewController.swift in Sources */,
 				0186E5202414F94700FA6EA9 /* ResponseForList.swift in Sources */,
+				019328272418B172006BFDE3 /* TabBarController.swift in Sources */,
 				0186E51E2414F94700FA6EA9 /* ListBooks.swift in Sources */,
 				019193542406CA8300E5FE6C /* ContentTableViewCell.swift in Sources */,
 				013BA479240E379D00767702 /* ReadOrDownloadViewController.swift in Sources */,

@@ -72,25 +72,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell.configureMethodForHomeTableViewCell( with: bookCategoryObj[indexPath.row])
         cell.categoryLabel.text = bookCategoryObj[indexPath.row].category
-//        cell.closure(Int){
-//
-//        }
 
-        cell.closure = {
+        cell.closure = { indexPathRow in
+            
             //let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReadOrDownloadViewController") as! ReadOrDownloadViewController
             self.navigationController?.pushViewController(vc, animated: true)
-
-            let imageString = cell.imageArray[indexPath.row]
-
+            let imageString = cell.imageArray[indexPathRow]
             vc.bookImageString = imageString
-
         }
-
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (homeTableView.frame.height / 2.6)
+        return (homeTableView.frame.height / 2.2)
     }
 }

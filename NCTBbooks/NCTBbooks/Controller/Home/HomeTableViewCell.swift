@@ -12,7 +12,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     var myViewController: HomeViewController!
     
-    var closure: (() -> Void)?
+    var closure: ((_ indexPathRow: Int) -> Void)?
     
     var counter:Int?
     var nameArray = [String]()
@@ -67,7 +67,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        closure?()
+        closure?(indexPath.row)
     }
 }
 

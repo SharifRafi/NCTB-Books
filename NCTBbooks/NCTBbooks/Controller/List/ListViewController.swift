@@ -150,10 +150,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
             
         else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc:ReadOrDownloadViewController = storyboard.instantiateViewController(identifier: "ReadOrDownloadViewController") as! ReadOrDownloadViewController
-            //vc.groupOfBooksName.text = 
-            navigationController?.pushViewController(vc, animated: true)
+            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReadOrDownloadViewController") as! ReadOrDownloadViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            let listImageString = subjectModel[indexPath.section].books![indexPath.row - 1].imageURL ?? ""
+            vc.bookImageString = listImageString
+            
+            
+//            let vc:ReadOrDownloadViewController = storyboard.instantiateViewController(identifier: "ReadOrDownloadViewController") as! ReadOrDownloadViewController
+//            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

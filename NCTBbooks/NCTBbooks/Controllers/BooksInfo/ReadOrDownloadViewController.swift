@@ -22,10 +22,10 @@ class ReadOrDownloadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let img = UIImageView(image: UIImage(named: "imgpsh_fullsize_anim"))
-        img.contentMode = .scaleAspectFill
-        self.navigationController?.navigationBar.addSubview(img)
-        self.navigationController?.navigationBar.sendSubviewToBack(img)
+//        let img = UIImageView(image: UIImage(named: "imgpsh_fullsize_anim"))
+//        img.contentMode = .scaleAspectFill
+//        self.navigationController?.navigationBar.addSubview(img)
+//        self.navigationController?.navigationBar.sendSubviewToBack(img)
         
         
         readButtonOutlet.layer.cornerRadius = 10
@@ -34,16 +34,16 @@ class ReadOrDownloadViewController: UIViewController {
         
         downloadButtonOutlet.layer.cornerRadius = 10
         
-        //gettingBookImage()
+        gettingBookImage()
     }
     
-//    func gettingBookImage() {
-//        let imageURL = URL(string: bookImageString)
-//        UIImage.getImage(url: imageURL!) { (bookImage) in
-//        self.selectedBooksImage.image = bookImage
-//        }
-//    }
-//
+    func gettingBookImage() {
+        let imageURL = URL(string: bookImageString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+        UIImage.getImage(url: imageURL, completion: { (image) in
+            self.selectedBooksImage.image  = image
+        })
+    }
+
     @IBAction func readButton(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
