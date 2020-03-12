@@ -17,17 +17,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.title = "NCTB BOOKS"
-        
-//        let img = UIImageView(image: UIImage(named: "imgpsh_fullsize_anim"))
-//        img.contentMode = .scaleAspectFill
-//        self.navigationController?.navigationBar.addSubview(img)
-//        self.navigationController?.navigationBar.sendSubviewToBack(img)
-//        
         homeTableView.delegate = self
         homeTableView.dataSource = self
-        
         gettingDataFromServer()
+        
+        self.ShowSpinner()
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false){
+            (t) in
+            self.RemoveSpinner()
+        }
     }
     
     func gettingDataFromServer() {
@@ -78,8 +76,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             //let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReadOrDownloadViewController") as! ReadOrDownloadViewController
             self.navigationController?.pushViewController(vc, animated: true)
+            
             let imageString = cell.imageArray[indexPathRow]
             vc.bookImageString = imageString
+            vc.bookName = cell.nameArray[indexPathRow]
+            vc.bookUrl = cell.urlArray[indexPathRow]
+            vc.classNameOfBook = self.bookCategoryObj[indexPath.row].category!
         }
         return cell
     }

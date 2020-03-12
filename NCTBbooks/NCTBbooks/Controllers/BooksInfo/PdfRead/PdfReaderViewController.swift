@@ -10,19 +10,22 @@ import UIKit
 import PDFKit
 
 class PdfReaderViewController: UIViewController {
-
+    var booksUrl: String = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationController?.setNavigationBarHidden(<#T##hidden: Bool##Bool#>, animated: <#T##Bool#>)
-       // self.navigationController?. = nil
-        
         view.backgroundColor = .white
+        
+        self.ShowSpinner()
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false){
+            (t) in
+            self.RemoveSpinner()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         let pdfView = PDFView()
-        
         pdfView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(pdfView)
         //pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -32,14 +35,10 @@ class PdfReaderViewController: UIViewController {
         pdfView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         pdfView.autoScales = true
         
-        guard let path = Bundle.main.url(forResource: "Ubhochor Manush by Alexander Belyaev", withExtension: "pdf") else { return }
+        let pdfUrl = URL(string: booksUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
         
-        if let document = PDFDocument(url: path) {
+        if let document = PDFDocument(url: pdfUrl) {
             pdfView.document = document
         }
-        
     }
-
-
-
 }

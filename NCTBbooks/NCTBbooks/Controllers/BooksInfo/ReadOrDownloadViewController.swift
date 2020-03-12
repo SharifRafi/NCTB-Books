@@ -18,22 +18,20 @@ class ReadOrDownloadViewController: UIViewController {
     
     
     var bookImageString: String = String()
+    var bookName: String = String()
+    var classNameOfBook: String = String()
+    var bookUrl: String = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let img = UIImageView(image: UIImage(named: "imgpsh_fullsize_anim"))
-//        img.contentMode = .scaleAspectFill
-//        self.navigationController?.navigationBar.addSubview(img)
-//        self.navigationController?.navigationBar.sendSubviewToBack(img)
-        
-        
         readButtonOutlet.layer.cornerRadius = 10
         readButtonOutlet.layer.borderWidth = 1
         readButtonOutlet.layer.borderColor = UIColor.green.cgColor
-        
         downloadButtonOutlet.layer.cornerRadius = 10
         
+        self.groupOfBooksName.text = bookName
+        self.className.text = classNameOfBook
         gettingBookImage()
     }
     
@@ -44,26 +42,25 @@ class ReadOrDownloadViewController: UIViewController {
         })
     }
 
-    @IBAction func readButton(_ sender: Any) {
+    @IBAction func readButton(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        print("check this")
-        let vc = storyboard.instantiateViewController(identifier: "PdfReaderViewController")
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = storyboard.instantiateViewController(identifier: "PdfReaderViewController") as! PdfReaderViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.booksUrl = bookUrl
+        
     }
     
     
     @IBAction func downloadButton(_ sender: Any) {
         
-        guard let url = URL(string: "https://dl.bdebooks.com/Bangladeshi%20Writer/1.%20Humayun%20Ahmed/01%20Himu%20Series/04%20Parapar%20By%20Humayun%20Ahmed%20%5B1993%5D%20%5BBDeBooks.Com%5D.pdf") else { return }
+        guard let url = URL(string: bookUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else { return }
                 
         let urlSession = URLSession(configuration: .default, delegate: self as URLSessionDelegate, delegateQueue: OperationQueue())
                 
             let downloadTask = urlSession.downloadTask(with: url)
                 downloadTask.resume()
     }
-    
-
 }
 
 

@@ -17,6 +17,7 @@ class HomeTableViewCell: UITableViewCell {
     var counter:Int?
     var nameArray = [String]()
     var imageArray = [String]()
+    var urlArray = [String]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +36,7 @@ class HomeTableViewCell: UITableViewCell {
 
             nameArray.append(json.books![i].name ?? "")
             imageArray.append(json.books![i].imageURL ?? "")
-           //print(imageArray[i])
+            urlArray.append(json.books![i].fileURL ?? "")
         }
     }
 }

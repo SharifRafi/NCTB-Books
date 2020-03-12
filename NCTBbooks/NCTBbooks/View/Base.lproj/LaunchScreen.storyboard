@@ -15,15 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash screen (1)" translatesAutoresizingMaskIntoConstraints="NO" id="5q8-ab-MEr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash screen" translatesAutoresizingMaskIntoConstraints="NO" id="5q8-ab-MEr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5q8-ab-MEr" secondAttribute="bottom" id="EkP-Ua-lOh"/>
-                            <constraint firstItem="5q8-ab-MEr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fng-n4-hb7"/>
+                            <constraint firstAttribute="bottom" secondItem="5q8-ab-MEr" secondAttribute="bottom" id="EkP-Ua-lOh"/>
+                            <constraint firstItem="5q8-ab-MEr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fng-n4-hb7"/>
                             <constraint firstItem="5q8-ab-MEr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uIC-Ag-7OY"/>
                             <constraint firstItem="5q8-ab-MEr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wsY-wW-AbY"/>
                         </constraints>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Splash screen (1)" width="375" height="812"/>
+        <image name="splash screen" width="375" height="812"/>
     </resources>
 </document>

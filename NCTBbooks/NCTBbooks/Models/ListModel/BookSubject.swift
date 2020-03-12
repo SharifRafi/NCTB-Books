@@ -2,7 +2,7 @@ import Foundation
 struct BookSubject : Codable {
 	let subject : String?
 	let books : [ListBooks]?
-    let isCollups : Bool = false
+    var isCollups : Bool = false
 
 	enum CodingKeys: String, CodingKey {
 

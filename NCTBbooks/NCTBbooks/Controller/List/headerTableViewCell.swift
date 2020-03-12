@@ -12,6 +12,7 @@ var listCounter:Int = 0
 var listNameArray = [String]()
 var listImageArray = [String]()
 
+
 class HeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLbl: UILabel!
@@ -36,14 +37,14 @@ class HeaderTableViewCell: UITableViewCell {
     }
     
 
-     public func configureMethodForListTableViewCell(with json:CategoryClassName){
-         listCounter = Int(json.books?.count ?? 0)
-         print(listCounter)
-         for i in 0...listCounter-1{
-             listNameArray.append(json.books![i].name ?? "")
-             listImageArray.append(json.books![i].image ?? "")
-         }
-     }
+//     public func configureMethodForListTableViewCell(with json:BookSubject){
+//         listCounter = Int(json.books?.count ?? 0)
+//         print(listCounter)
+//         for i in 0...listCounter-1{
+//             listNameArray.append(json.books![i].name ?? "")
+//             listImageArray.append(json.books![i].imageURL ?? "")
+//         }
+//     }
     
     func setExpanded() {
         let down = UIImage(systemName: "chevron.down")
