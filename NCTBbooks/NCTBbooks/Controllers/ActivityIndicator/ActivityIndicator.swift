@@ -2,8 +2,8 @@
 //  ActivityIndicator.swift
 //  Activity Indicator On Any ViewController
 //
-//  Created by Admin on 1/26/20.
-//  Copyright © 2020 Admin. All rights reserved.
+//  Created by Sharif Rafi on 1/26/20.
+//  Copyright © 2020 Sharif Rafi. All rights reserved.
 //
 
 import UIKit

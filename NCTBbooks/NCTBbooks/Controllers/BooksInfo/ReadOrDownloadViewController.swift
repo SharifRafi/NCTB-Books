@@ -66,7 +66,16 @@ class ReadOrDownloadViewController: UIViewController {
 
     
 extension ReadOrDownloadViewController:  URLSessionDownloadDelegate {
+    
+    
+    
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("downloadLocation:", location)
+        
+        let path = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        let newURL = path.appendingPathComponent("newPDF")
+        try! FileManager.default.moveItem(at: location, to: newURL)
+
+            print("downloadLocation:", location)
+            print("newLocation:", newURL)
     }
 }
