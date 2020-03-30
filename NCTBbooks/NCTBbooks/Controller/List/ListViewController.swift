@@ -78,6 +78,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             
             cell.contentLbl.text = subjectModel[indexPath.section].books![indexPath.row - 1].name ?? ""
+            cell.classLabel.text =  subjectModel[indexPath.section].books![indexPath.row - 1].category ?? ""
            
             let imgString = subjectModel[indexPath.section].books![indexPath.row - 1].imageURL ?? ""
             let imgUrlString = URL(string: imgString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!

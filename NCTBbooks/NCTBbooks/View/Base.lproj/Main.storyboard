@@ -141,8 +141,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8mG-Xb-jz9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.75513907591408447" blue="1" alpha="0.52387764084507038" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.70865426936619713" green="0.75513907591408447" blue="1" alpha="0.52387764084507038" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="0.18290602992957747" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <outlet property="customTabBar" destination="8mG-Xb-jz9" id="TjY-mt-DAs"/>
@@ -191,7 +191,7 @@
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="bjm-hL-pIR">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="bjm-hL-pIR">
                                                     <rect key="frame" x="15" y="10" width="42" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="4lT-g0-AOw"/>
@@ -227,12 +227,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4L-pX-Ydc">
-                                                    <rect key="frame" x="104.5" y="10" width="286.5" height="110"/>
+                                                    <rect key="frame" x="104.5" y="12" width="286.5" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="110" id="XFf-5m-Esb"/>
+                                                        <constraint firstAttribute="height" constant="80" id="XFf-5m-Esb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book-clipart-logo-10" translatesAutoresizingMaskIntoConstraints="NO" id="JT1-nf-PKb">
@@ -241,11 +241,23 @@
                                                         <constraint firstAttribute="height" constant="110" id="yTX-ya-U9Y"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-eh-fgb">
+                                                    <rect key="frame" x="104.5" y="93" width="286.5" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="SVL-Um-RGH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="0bS-eh-fgb" firstAttribute="trailing" secondItem="g4L-pX-Ydc" secondAttribute="trailing" id="9dK-l4-uFb"/>
                                                 <constraint firstItem="g4L-pX-Ydc" firstAttribute="width" secondItem="FzB-ZB-6iT" secondAttribute="width" multiplier="0.72" id="MtW-8Y-Rjg"/>
-                                                <constraint firstItem="g4L-pX-Ydc" firstAttribute="top" secondItem="FzB-ZB-6iT" secondAttribute="top" constant="10" id="Yr2-na-nfP"/>
+                                                <constraint firstItem="g4L-pX-Ydc" firstAttribute="top" secondItem="FzB-ZB-6iT" secondAttribute="top" constant="12" id="Yr2-na-nfP"/>
                                                 <constraint firstItem="g4L-pX-Ydc" firstAttribute="leading" secondItem="JT1-nf-PKb" secondAttribute="trailing" constant="15" id="agB-8x-8nr"/>
+                                                <constraint firstItem="0bS-eh-fgb" firstAttribute="leading" secondItem="g4L-pX-Ydc" secondAttribute="leading" id="cQ0-VL-G3W"/>
+                                                <constraint firstItem="0bS-eh-fgb" firstAttribute="top" secondItem="g4L-pX-Ydc" secondAttribute="bottom" constant="1" id="iHh-ic-W4j"/>
                                                 <constraint firstItem="JT1-nf-PKb" firstAttribute="top" secondItem="FzB-ZB-6iT" secondAttribute="top" constant="10" id="mki-cD-Xtw"/>
                                                 <constraint firstItem="JT1-nf-PKb" firstAttribute="leading" secondItem="FzB-ZB-6iT" secondAttribute="leading" constant="10" id="rrA-lc-jRS"/>
                                                 <constraint firstItem="JT1-nf-PKb" firstAttribute="width" secondItem="FzB-ZB-6iT" secondAttribute="width" multiplier="0.2" id="yO1-Gy-rDJ"/>
@@ -253,6 +265,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="bookImage" destination="JT1-nf-PKb" id="VS5-K9-CRX"/>
+                                            <outlet property="classLabel" destination="0bS-eh-fgb" id="Zaj-cF-CaP"/>
                                             <outlet property="contentLbl" destination="g4L-pX-Ydc" id="ZBh-Vc-o8R"/>
                                         </connections>
                                     </tableViewCell>

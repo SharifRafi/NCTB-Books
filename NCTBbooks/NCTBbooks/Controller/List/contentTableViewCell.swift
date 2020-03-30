@@ -12,6 +12,7 @@ class ContentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var classLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
