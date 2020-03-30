@@ -1,4 +1,5 @@
 import Foundation
+
 struct ResponseForHome : Codable {
 	let requestTime : String?
 	let responseTime : String?

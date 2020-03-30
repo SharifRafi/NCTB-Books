@@ -11,14 +11,13 @@
 		0112F7A4240B92260047C8DB /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F7A3240B92250047C8DB /* ImageDownloader.swift */; };
 		013BA478240E379D00767702 /* PdfReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BA476240E379D00767702 /* PdfReaderViewController.swift */; };
 		013BA479240E379D00767702 /* ReadOrDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BA477240E379D00767702 /* ReadOrDownloadViewController.swift */; };
-		013BA47B240E39E500767702 /* Ubhochor Manush by Alexander Belyaev.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 013BA47A240E39E500767702 /* Ubhochor Manush by Alexander Belyaev.pdf */; };
-		018379B824071D7600022950 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018379B724071D7600022950 /* DataModel.swift */; };
-		0186E5182414F86F00FA6EA9 /* BookCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E5152414F86F00FA6EA9 /* BookCategory.swift */; };
-		0186E5192414F86F00FA6EA9 /* HomeBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E5162414F86F00FA6EA9 /* HomeBooks.swift */; };
-		0186E51A2414F86F00FA6EA9 /* ResponseForHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E5172414F86F00FA6EA9 /* ResponseForHome.swift */; };
+		0185B4452431E01400EB8513 /* BookCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0185B4422431E01400EB8513 /* BookCategory.swift */; };
+		0185B4462431E01400EB8513 /* HomeBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0185B4432431E01400EB8513 /* HomeBooks.swift */; };
+		0185B4472431E01400EB8513 /* ResponseForHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0185B4442431E01400EB8513 /* ResponseForHome.swift */; };
 		0186E51E2414F94700FA6EA9 /* ListBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E51B2414F94700FA6EA9 /* ListBooks.swift */; };
 		0186E51F2414F94700FA6EA9 /* BookSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E51C2414F94700FA6EA9 /* BookSubject.swift */; };
 		0186E5202414F94700FA6EA9 /* ResponseForList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E51D2414F94700FA6EA9 /* ResponseForList.swift */; };
+		018EE8C82419FB2400088CF2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EE8C72419FB2400088CF2 /* ActivityIndicator.swift */; };
 		019192D82406C28000E5FE6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019192D72406C28000E5FE6C /* Assets.xcassets */; };
 		019192E62406C28000E5FE6C /* NCTBbooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019192E52406C28000E5FE6C /* NCTBbooksTests.swift */; };
 		019192F12406C28000E5FE6C /* NCTBbooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019192F02406C28000E5FE6C /* NCTBbooksUITests.swift */; };
@@ -28,12 +27,13 @@
 		0191934A2406CA8300E5FE6C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019193462406CA8300E5FE6C /* ListViewController.swift */; };
 		0191934F2406CA8300E5FE6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191934D2406CA8300E5FE6C /* AppDelegate.swift */; };
 		019193502406CA8300E5FE6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191934E2406CA8300E5FE6C /* SceneDelegate.swift */; };
-		019193532406CA8300E5FE6C /* headerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019193512406CA8300E5FE6C /* headerTableViewCell.swift */; };
-		019193542406CA8300E5FE6C /* contentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019193522406CA8300E5FE6C /* contentTableViewCell.swift */; };
+		019193532406CA8300E5FE6C /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019193512406CA8300E5FE6C /* TopCell.swift */; };
+		019193542406CA8300E5FE6C /* DownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019193522406CA8300E5FE6C /* DownCell.swift */; };
+		019328272418B172006BFDE3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019328262418B172006BFDE3 /* TabBarController.swift */; };
 		0195B9392407156B00E63D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195B9352407156B00E63D65 /* LaunchScreen.storyboard */; };
 		0195B93A2407156B00E63D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195B9372407156B00E63D65 /* Main.storyboard */; };
-		840B64E624079DE7008AEF1D /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B64E424079DE7008AEF1D /* Books.swift */; };
-		840B64E724079DE7008AEF1D /* CategoryClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B64E524079DE7008AEF1D /* CategoryClassName.swift */; };
+		019A13F22429EBCD00D8D00A /* HomeModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A13F02429EBCD00D8D00A /* HomeModelClass.swift */; };
+		019A13F32429EBCD00D8D00A /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A13F12429EBCD00D8D00A /* Books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,14 +58,13 @@
 		0112F7A3240B92250047C8DB /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = NCTBbooks/Controller/ImageDownloader.swift; sourceTree = SOURCE_ROOT; };
 		013BA476240E379D00767702 /* PdfReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdfReaderViewController.swift; sourceTree = "<group>"; };
 		013BA477240E379D00767702 /* ReadOrDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadOrDownloadViewController.swift; sourceTree = "<group>"; };
-		013BA47A240E39E500767702 /* Ubhochor Manush by Alexander Belyaev.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Ubhochor Manush by Alexander Belyaev.pdf"; sourceTree = SOURCE_ROOT; };
-		018379B724071D7600022950 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		0186E5152414F86F00FA6EA9 /* BookCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCategory.swift; sourceTree = "<group>"; };
-		0186E5162414F86F00FA6EA9 /* HomeBooks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBooks.swift; sourceTree = "<group>"; };
-		0186E5172414F86F00FA6EA9 /* ResponseForHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseForHome.swift; sourceTree = "<group>"; };
+		0185B4422431E01400EB8513 /* BookCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCategory.swift; sourceTree = "<group>"; };
+		0185B4432431E01400EB8513 /* HomeBooks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBooks.swift; sourceTree = "<group>"; };
+		0185B4442431E01400EB8513 /* ResponseForHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseForHome.swift; sourceTree = "<group>"; };
 		0186E51B2414F94700FA6EA9 /* ListBooks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBooks.swift; sourceTree = "<group>"; };
 		0186E51C2414F94700FA6EA9 /* BookSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSubject.swift; sourceTree = "<group>"; };
 		0186E51D2414F94700FA6EA9 /* ResponseForList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseForList.swift; sourceTree = "<group>"; };
+		018EE8C72419FB2400088CF2 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		019192CB2406C27F00E5FE6C /* NCTBbooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NCTBbooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019192D72406C28000E5FE6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019192DC2406C28000E5FE6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,12 +80,13 @@
 		019193462406CA8300E5FE6C /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = NCTBbooks/Controller/List/ListViewController.swift; sourceTree = SOURCE_ROOT; };
 		0191934D2406CA8300E5FE6C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0191934E2406CA8300E5FE6C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		019193512406CA8300E5FE6C /* headerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = headerTableViewCell.swift; path = NCTBbooks/Controller/List/headerTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		019193522406CA8300E5FE6C /* contentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = contentTableViewCell.swift; path = NCTBbooks/Controller/List/contentTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		019193512406CA8300E5FE6C /* TopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopCell.swift; path = NCTBbooks/Controller/List/TopCell.swift; sourceTree = SOURCE_ROOT; };
+		019193522406CA8300E5FE6C /* DownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownCell.swift; path = NCTBbooks/Controller/List/DownCell.swift; sourceTree = SOURCE_ROOT; };
+		019328262418B172006BFDE3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0195B9362407156B00E63D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0195B9382407156B00E63D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		840B64E424079DE7008AEF1D /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
-		840B64E524079DE7008AEF1D /* CategoryClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryClassName.swift; sourceTree = "<group>"; };
+		019A13F02429EBCD00D8D00A /* HomeModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModelClass.swift; sourceTree = "<group>"; };
+		019A13F12429EBCD00D8D00A /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,6 @@
 		013BA475240E379D00767702 /* PdfRead */ = {
 			isa = PBXGroup;
 			children = (
-				013BA47A240E39E500767702 /* Ubhochor Manush by Alexander Belyaev.pdf */,
 				013BA476240E379D00767702 /* PdfReaderViewController.swift */,
 			);
 			path = PdfRead;
@@ -126,9 +125,11 @@
 		0186E5132414F6F400FA6EA9 /* HomeModel */ = {
 			isa = PBXGroup;
 			children = (
-				0186E5172414F86F00FA6EA9 /* ResponseForHome.swift */,
-				0186E5152414F86F00FA6EA9 /* BookCategory.swift */,
-				0186E5162414F86F00FA6EA9 /* HomeBooks.swift */,
+				019A13F02429EBCD00D8D00A /* HomeModelClass.swift */,
+				019A13F12429EBCD00D8D00A /* Books.swift */,
+				0185B4422431E01400EB8513 /* BookCategory.swift */,
+				0185B4432431E01400EB8513 /* HomeBooks.swift */,
+				0185B4442431E01400EB8513 /* ResponseForHome.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -143,14 +144,12 @@
 			path = ListModel;
 			sourceTree = "<group>";
 		};
-		0186E5212414F95800FA6EA9 /* Raf */ = {
+		018EE8C62419FAD300088CF2 /* ActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
-				840B64E524079DE7008AEF1D /* CategoryClassName.swift */,
-				840B64E424079DE7008AEF1D /* Books.swift */,
-				018379B724071D7600022950 /* DataModel.swift */,
+				018EE8C72419FB2400088CF2 /* ActivityIndicator.swift */,
 			);
-			path = Raf;
+			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
 		019192C22406C27F00E5FE6C = {
@@ -211,6 +210,7 @@
 				0191931C2406C64C00E5FE6C /* Home */,
 				019193182406C5B600E5FE6C /* List */,
 				019193032406C36300E5FE6C /* BooksInfo */,
+				018EE8C62419FAD300088CF2 /* ActivityIndicator */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -220,6 +220,7 @@
 			children = (
 				0112F7A3240B92250047C8DB /* ImageDownloader.swift */,
 				0112F7A1240B91EB0047C8DB /* ViewController.swift */,
+				019328262418B172006BFDE3 /* TabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -237,8 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				019193462406CA8300E5FE6C /* ListViewController.swift */,
-				019193512406CA8300E5FE6C /* headerTableViewCell.swift */,
-				019193522406CA8300E5FE6C /* contentTableViewCell.swift */,
+				019193512406CA8300E5FE6C /* TopCell.swift */,
+				019193522406CA8300E5FE6C /* DownCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -265,7 +266,6 @@
 		0195B92124070E8F00E63D65 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0186E5212414F95800FA6EA9 /* Raf */,
 				0186E5132414F6F400FA6EA9 /* HomeModel */,
 				0186E5142414F70400FA6EA9 /* ListModel */,
 			);
@@ -386,7 +386,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0195B93A2407156B00E63D65 /* Main.storyboard in Resources */,
-				013BA47B240E39E500767702 /* Ubhochor Manush by Alexander Belyaev.pdf in Resources */,
 				0195B9392407156B00E63D65 /* LaunchScreen.storyboard in Resources */,
 				019192D82406C28000E5FE6C /* Assets.xcassets in Resources */,
 			);
@@ -413,25 +412,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				019193532406CA8300E5FE6C /* headerTableViewCell.swift in Sources */,
+				019193532406CA8300E5FE6C /* TopCell.swift in Sources */,
 				019193422406CA8300E5FE6C /* HomeTableViewCell.swift in Sources */,
 				0112F7A4240B92260047C8DB /* ImageDownloader.swift in Sources */,
-				018379B824071D7600022950 /* DataModel.swift in Sources */,
-				840B64E724079DE7008AEF1D /* CategoryClassName.swift in Sources */,
-				840B64E624079DE7008AEF1D /* Books.swift in Sources */,
-				0186E5192414F86F00FA6EA9 /* HomeBooks.swift in Sources */,
 				0186E51F2414F94700FA6EA9 /* BookSubject.swift in Sources */,
-				0186E5182414F86F00FA6EA9 /* BookCategory.swift in Sources */,
+				019A13F22429EBCD00D8D00A /* HomeModelClass.swift in Sources */,
 				0191934A2406CA8300E5FE6C /* ListViewController.swift in Sources */,
+				0185B4452431E01400EB8513 /* BookCategory.swift in Sources */,
+				0185B4472431E01400EB8513 /* ResponseForHome.swift in Sources */,
 				019193432406CA8300E5FE6C /* HomeCollectionViewCell.swift in Sources */,
 				0112F7A2240B91EB0047C8DB /* ViewController.swift in Sources */,
 				0186E5202414F94700FA6EA9 /* ResponseForList.swift in Sources */,
+				019328272418B172006BFDE3 /* TabBarController.swift in Sources */,
 				0186E51E2414F94700FA6EA9 /* ListBooks.swift in Sources */,
-				019193542406CA8300E5FE6C /* contentTableViewCell.swift in Sources */,
+				019193542406CA8300E5FE6C /* DownCell.swift in Sources */,
+				0185B4462431E01400EB8513 /* HomeBooks.swift in Sources */,
+				019A13F32429EBCD00D8D00A /* Books.swift in Sources */,
 				013BA479240E379D00767702 /* ReadOrDownloadViewController.swift in Sources */,
 				013BA478240E379D00767702 /* PdfReaderViewController.swift in Sources */,
 				0191934F2406CA8300E5FE6C /* AppDelegate.swift in Sources */,
-				0186E51A2414F86F00FA6EA9 /* ResponseForHome.swift in Sources */,
+				018EE8C82419FB2400088CF2 /* ActivityIndicator.swift in Sources */,
 				019193442406CA8300E5FE6C /* HomeViewController.swift in Sources */,
 				019193502406CA8300E5FE6C /* SceneDelegate.swift in Sources */,
 			);
