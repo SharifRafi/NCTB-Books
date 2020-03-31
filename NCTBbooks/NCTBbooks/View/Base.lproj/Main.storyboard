@@ -102,6 +102,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="rWh-ya-Sy5" firstAttribute="top" secondItem="fke-5d-5IS" secondAttribute="bottom" constant="5" id="8bI-6v-U8g"/>
                                                 <constraint firstAttribute="bottom" secondItem="rWh-ya-Sy5" secondAttribute="bottom" constant="8" id="HSi-rp-eY7"/>
@@ -246,7 +247,7 @@
                                                         <constraint firstAttribute="height" constant="3.5" id="qei-NK-z5t"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1p-uI-J7u">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1p-uI-J7u">
                                                     <rect key="frame" x="113" y="8" width="277" height="87.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -307,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o79-ad-3Wk" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63.768115942028992" y="119.86607142857142"/>
+            <point key="canvasLocation" x="177" y="128"/>
         </scene>
         <!--আমাদের সম্পর্কে-->
         <scene sceneID="ycc-B2-pMH">
@@ -380,8 +381,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Team iOS" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mrl-bR-Sn9">
-                                        <rect key="frame" x="24" y="869" width="366" height="379"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Team iOS (Trainee)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mrl-bR-Sn9">
+                                        <rect key="frame" x="20" y="869" width="370" height="379"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -390,7 +391,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="UZ2-uC-Rrc" firstAttribute="leading" secondItem="zUQ-pK-csr" secondAttribute="leading" constant="24" id="1gZ-Nt-zBX"/>
-                                    <constraint firstItem="mrl-bR-Sn9" firstAttribute="leading" secondItem="zUQ-pK-csr" secondAttribute="leading" constant="24" id="5nG-EZ-04J"/>
+                                    <constraint firstItem="mrl-bR-Sn9" firstAttribute="leading" secondItem="zUQ-pK-csr" secondAttribute="leading" constant="20" id="5nG-EZ-04J"/>
                                     <constraint firstItem="SFE-cv-giw" firstAttribute="leading" secondItem="zUQ-pK-csr" secondAttribute="leading" constant="24" id="6Hm-4L-PvB"/>
                                     <constraint firstItem="RZv-IU-4dV" firstAttribute="width" secondItem="O57-34-uPd" secondAttribute="width" id="Bwu-cJ-46B"/>
                                     <constraint firstItem="Tny-yW-4tJ" firstAttribute="leading" secondItem="zUQ-pK-csr" secondAttribute="leading" constant="24" id="FLz-Yg-3IG"/>
@@ -545,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDv-JX-ek9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3367" y="244"/>
+            <point key="canvasLocation" x="3104" y="128"/>
         </scene>
         <!--Home-->
         <scene sceneID="Lja-Fr-gGN">
