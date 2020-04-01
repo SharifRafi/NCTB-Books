@@ -11,6 +11,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var categoryLabel: UILabel!
     var myViewController: HomeViewController!
+    var tableViewset:UITableView?
     
     var closure: ((_ indexPathRow: Int) -> Void)?
     
@@ -18,6 +19,7 @@ class HomeTableViewCell: UITableViewCell {
     var nameArray = [String]()
     var imageArray = [String]()
     var urlArray = [String]()
+    var taskbookcategory:BookCategory?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,17 +29,27 @@ class HomeTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        //self.tableViewset?.reloadData()
     }
+
     
-    public func configureMethodForHomeTableViewCell(with json:BookCategory){
+    public func configureMethodForHomeTableViewCell(with json:BookCategory, tableViewme:UITableView){
+        nameArray.removeAll()
+        imageArray.removeAll()
+        urlArray.removeAll()
+        
+        taskbookcategory = json
         counter = Int(json.books?.count ?? 0)
-        //print("counter section", json.books?.count)
+       // print("Counter:", counter)
+     
+        tableViewset = tableViewme
         for i in 0...counter! - 1{
 
             nameArray.append(json.books![i].name ?? "")
             imageArray.append(json.books![i].imageURL ?? "")
             urlArray.append(json.books![i].fileURL ?? "")
         }
+        
     }
 }
 
@@ -63,7 +75,7 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print ("faul")
+        //print ("faul")
         return CGSize(width: (self.bounds.size.width / 2.8), height: (250))
         
     }
@@ -72,6 +84,15 @@ extension HomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         closure?(indexPath.row)
     }
+    
+    override func prepareForReuse() {
+           super.prepareForReuse()
+         
+        print("inside !!!")
+        DispatchQueue.main.async {
+            self.homeCollectionView.reloadData()
+        }
+       }
     
 }
 

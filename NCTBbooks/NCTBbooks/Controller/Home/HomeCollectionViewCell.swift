@@ -14,4 +14,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var homeCollectionImageView: UIImageView!
     
+    override func prepareForReuse() {
+          super.prepareForReuse()
+          homeCollectionImageView.image = nil
+          homeCollectionLabel.text = nil
+      }
+   
+    
 }

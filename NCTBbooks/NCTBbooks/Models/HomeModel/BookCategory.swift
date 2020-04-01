@@ -2,11 +2,14 @@ import Foundation
 struct BookCategory : Codable {
 	let category : String?
 	let books : [HomeBooks]?
+    var done:Bool = false
+    //let taskArray:[Int]?
 
 	enum CodingKeys: String, CodingKey {
 
 		case category = "category"
 		case books = "books"
+        
 	}
 
 	init(from decoder: Decoder) throws {

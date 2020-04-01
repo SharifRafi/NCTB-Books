@@ -20,6 +20,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         getDataFromServer()
+        self.ShowSpinner()
+              Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false){
+                  (t) in
+        self.RemoveSpinner()
+        }
     }
     
     func getDataFromServer(){
