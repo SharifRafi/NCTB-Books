@@ -130,7 +130,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 else{
                     subjectModel[i].isCollups = false
                 }
-                tableView.reloadSections([i], with: .automatic)
+                tableView.reloadData()
+                //tableView.reloadSections([i], with: .automatic)
             }
         }
             
