@@ -374,7 +374,7 @@ NCTB Book অ্যাপটি অফলাইনে পড়ার উপযো�
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powerd By :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFE-cv-giw">
-                                        <rect key="frame" x="24" y="1124" width="190" height="21"/>
+                                        <rect key="frame" x="24" y="1124" width="189" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="dYi-sn-j42"/>
                                         </constraints>
@@ -397,7 +397,7 @@ NCTB Book অ্যাপটি অফলাইনে পড়ার উপযো�
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Email For Contact :  nctbbook@gmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="mrl-bR-Sn9">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Email For Contact :  nctbbook@gmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="mrl-bR-Sn9">
                                         <rect key="frame" x="24" y="1441" width="370" height="217"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -426,7 +426,7 @@ NCTB Book অ্যাপটি অফলাইনে পড়ার উপযো�
                                     <constraint firstItem="O57-34-uPd" firstAttribute="top" secondItem="SFE-cv-giw" secondAttribute="bottom" id="Z9g-L8-9xe"/>
                                     <constraint firstAttribute="trailing" secondItem="Go4-yf-r6M" secondAttribute="trailing" constant="20" id="Zgr-ws-gmp"/>
                                     <constraint firstItem="UZ2-uC-Rrc" firstAttribute="top" secondItem="O57-34-uPd" secondAttribute="bottom" constant="8" id="Zu3-lx-gU0"/>
-                                    <constraint firstAttribute="trailing" secondItem="SFE-cv-giw" secondAttribute="trailing" constant="200" id="b4K-HV-a8o"/>
+                                    <constraint firstAttribute="trailing" secondItem="SFE-cv-giw" secondAttribute="trailing" constant="201" id="b4K-HV-a8o"/>
                                     <constraint firstItem="Tny-yW-4tJ" firstAttribute="centerX" secondItem="zUQ-pK-csr" secondAttribute="centerX" id="bcf-pW-cwp"/>
                                     <constraint firstItem="RZv-IU-4dV" firstAttribute="bottom" secondItem="O57-34-uPd" secondAttribute="bottom" id="dNL-2T-vuT"/>
                                     <constraint firstItem="Go4-yf-r6M" firstAttribute="top" secondItem="UZ2-uC-Rrc" secondAttribute="bottom" constant="12" id="hTe-ne-2hY"/>
