@@ -32,8 +32,6 @@
 		019328272418B172006BFDE3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019328262418B172006BFDE3 /* TabBarController.swift */; };
 		0195B9392407156B00E63D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195B9352407156B00E63D65 /* LaunchScreen.storyboard */; };
 		0195B93A2407156B00E63D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0195B9372407156B00E63D65 /* Main.storyboard */; };
-		019A13F22429EBCD00D8D00A /* HomeModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A13F02429EBCD00D8D00A /* HomeModelClass.swift */; };
-		019A13F32429EBCD00D8D00A /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A13F12429EBCD00D8D00A /* Books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +83,6 @@
 		019328262418B172006BFDE3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0195B9362407156B00E63D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0195B9382407156B00E63D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		019A13F02429EBCD00D8D00A /* HomeModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModelClass.swift; sourceTree = "<group>"; };
-		019A13F12429EBCD00D8D00A /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +121,6 @@
 		0186E5132414F6F400FA6EA9 /* HomeModel */ = {
 			isa = PBXGroup;
 			children = (
-				019A13F02429EBCD00D8D00A /* HomeModelClass.swift */,
-				019A13F12429EBCD00D8D00A /* Books.swift */,
 				0185B4422431E01400EB8513 /* BookCategory.swift */,
 				0185B4432431E01400EB8513 /* HomeBooks.swift */,
 				0185B4442431E01400EB8513 /* ResponseForHome.swift */,
@@ -416,7 +410,6 @@
 				019193422406CA8300E5FE6C /* HomeTableViewCell.swift in Sources */,
 				0112F7A4240B92260047C8DB /* ImageDownloader.swift in Sources */,
 				0186E51F2414F94700FA6EA9 /* BookSubject.swift in Sources */,
-				019A13F22429EBCD00D8D00A /* HomeModelClass.swift in Sources */,
 				0191934A2406CA8300E5FE6C /* ListViewController.swift in Sources */,
 				0185B4452431E01400EB8513 /* BookCategory.swift in Sources */,
 				0185B4472431E01400EB8513 /* ResponseForHome.swift in Sources */,
@@ -427,7 +420,6 @@
 				0186E51E2414F94700FA6EA9 /* ListBooks.swift in Sources */,
 				019193542406CA8300E5FE6C /* DownCell.swift in Sources */,
 				0185B4462431E01400EB8513 /* HomeBooks.swift in Sources */,
-				019A13F32429EBCD00D8D00A /* Books.swift in Sources */,
 				013BA479240E379D00767702 /* ReadOrDownloadViewController.swift in Sources */,
 				013BA478240E379D00767702 /* PdfReaderViewController.swift in Sources */,
 				0191934F2406CA8300E5FE6C /* AppDelegate.swift in Sources */,
